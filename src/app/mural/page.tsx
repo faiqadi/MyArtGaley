@@ -18,43 +18,48 @@ export default function Mural() {
     const artworks = allArtworks.slice(startIdx, startIdx + PAGE_SIZE);
 
     return (
-        <div className="max-w-6xl mx-auto py-16 px-4">
-            <h1 className="text-3xl font-bold mb-8 text-center">Mural</h1>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                {artworks.map((art) => (
-                    <div key={art.id} className="bg-white dark:bg-gray-900 rounded-lg shadow-md overflow-hidden flex flex-col items-center p-4">
-                        <div className="w-full h-48 bg-gray-200 dark:bg-gray-800 flex items-center justify-center mb-4">
-                            <Image
-                                src={art.image}
-                                alt={art.title}
-                                width={120}
-                                height={120}
-                            />
-                        </div>
-                        <h3 className="font-medium text-lg mb-1">{art.title}</h3>
-                        <p className="text-sm text-gray-500 dark:text-gray-400">by {art.artist}</p>
-                    </div>
-                ))}
+        <div className="min-h-screen overflow-visible">
+            <div className="sticky top-16 z-30 w-full bg-pink-100 dark:bg-pink-900/80 text-pink-900 dark:text-white py-4 px-4 shadow font-medium text-center">
+                Mural adalah seni melukis atau menggambar pada dinding atau permukaan besar lain, seringkali bersifat publik dan monumental.
             </div>
-            {/* Pagination Controls */}
-            <div className="flex justify-center items-center gap-4 mt-12">
-                <button
-                    className="px-4 py-2 rounded bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-200 font-medium disabled:opacity-50"
-                    onClick={() => setPage((p) => Math.max(1, p - 1))}
-                    disabled={page === 1}
-                >
-                    Previous
-                </button>
-                <span className="text-base font-semibold">
-                    Page {page} of {totalPages}
-                </span>
-                <button
-                    className="px-4 py-2 rounded bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-200 font-medium disabled:opacity-50"
-                    onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
-                    disabled={page === totalPages}
-                >
-                    Next
-                </button>
+            <div className="max-w-6xl mx-auto py-16 px-4 pt-20">
+                <h1 className="text-3xl font-bold mb-8 text-center">Mural</h1>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                    {artworks.map((art) => (
+                        <div key={art.id} className="bg-white dark:bg-gray-900 rounded-lg shadow-md overflow-hidden flex flex-col items-center p-4">
+                            <div className="w-full h-48 bg-gray-200 dark:bg-gray-800 flex items-center justify-center mb-4">
+                                <Image
+                                    src={art.image}
+                                    alt={art.title}
+                                    width={120}
+                                    height={120}
+                                />
+                            </div>
+                            <h3 className="font-medium text-lg mb-1">{art.title}</h3>
+                            <p className="text-sm text-gray-500 dark:text-gray-400">by {art.artist}</p>
+                        </div>
+                    ))}
+                </div>
+                {/* Pagination Controls */}
+                <div className="flex justify-center items-center gap-4 mt-12">
+                    <button
+                        className="px-4 py-2 rounded bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-200 font-medium disabled:opacity-50"
+                        onClick={() => setPage((p) => Math.max(1, p - 1))}
+                        disabled={page === 1}
+                    >
+                        Previous
+                    </button>
+                    <span className="text-base font-semibold">
+                        Page {page} of {totalPages}
+                    </span>
+                    <button
+                        className="px-4 py-2 rounded bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-200 font-medium disabled:opacity-50"
+                        onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+                        disabled={page === totalPages}
+                    >
+                        Next
+                    </button>
+                </div>
             </div>
         </div>
     );

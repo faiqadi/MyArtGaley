@@ -29,22 +29,6 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* Hero Section */}
-            <section className="w-full flex flex-col items-center justify-center py-16 px-4 text-center bg-gradient-to-b from-white to-gray-100 dark:from-black dark:to-gray-900">
-                <h1 className="text-4xl sm:text-6xl font-bold mb-4 tracking-tight">Art Galey</h1>
-                <p className="text-lg sm:text-2xl max-w-2xl mb-8 text-gray-700 dark:text-gray-300">Discover, appreciate, and collect stunning works from talented artists around the world.</p>
-                <div className="w-full flex justify-center">
-                    <Image
-                        src="/public/globe.svg"
-                        alt="Gallery Hero Art"
-                        width={120}
-                        height={120}
-                        className="rounded-xl shadow-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-black"
-                        priority
-                    />
-                </div>
-            </section>
-
             {/* Auto Slide Gallery */}
             <AutoSlideGallery />
 
