@@ -4,10 +4,9 @@ import { usePathname } from "next/navigation";
 
 const navItems = [
   { name: "Home", href: "/" },
-  { name: "Gallery", href: "/gallery" },
-  { name: "Favorite", href: "/favorite" },
-  { name: "Artists", href: "/artists" },
-  { name: "About", href: "/about" },
+  { name: "Painting", href: "/painting" },
+  { name: "Mural", href: "/mural" },
+  { name: "Custom", href: "/custom" },
   { name: "Contact", href: "/contact" },
 ];
 

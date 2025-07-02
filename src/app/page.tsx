@@ -4,6 +4,31 @@ import AutoSlideGallery from "./AutoSlideGallery";
 export default function Home() {
     return (
         <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)] flex flex-col items-center font-sans">
+            {/* Profile Banner */}
+            <section className="w-full flex flex-col items-center gap-6 rounded-xl shadow-lg p-8 mt-8 mb-12 max-w-5xl mx-auto">
+                {/* Profile Info */}
+                <div className="flex flex-col items-center text-center">
+                    <h2 className="text-2xl font-bold mb-2">Nama Artist</h2>
+                    <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">Contemporary Artist</p>
+                </div>
+                {/* Profile Image */}
+                <div className="flex justify-center">
+                    <Image
+                        src="/Attack__000.png"
+                        alt="Profile Picture"
+                        width={160}
+                        height={160}
+                        className="rounded-full border-4 border-gray-200 dark:border-gray-700 object-cover shadow-xl"
+                    />
+                </div>
+                {/* Description */}
+                <div className="flex flex-col items-center text-center">
+                    <p className="text-base text-gray-700 dark:text-gray-200 max-w-xs">
+                        Artist ini dikenal dengan karya-karya yang penuh warna dan ekspresi, menggabungkan teknik modern dan tradisional untuk menciptakan pengalaman visual yang unik.
+                    </p>
+                </div>
+            </section>
+
             {/* Hero Section */}
             <section className="w-full flex flex-col items-center justify-center py-16 px-4 text-center bg-gradient-to-b from-white to-gray-100 dark:from-black dark:to-gray-900">
                 <h1 className="text-4xl sm:text-6xl font-bold mb-4 tracking-tight">Art Galey</h1>
@@ -42,14 +67,6 @@ export default function Home() {
                         </div>
                     ))}
                 </div>
-            </section>
-
-            {/* About Section */}
-            <section className="w-full max-w-3xl py-12 px-4 text-center">
-                <h2 className="text-xl sm:text-2xl font-semibold mb-4">About Art Galey</h2>
-                <p className="text-base text-gray-600 dark:text-gray-300">
-                    Art Galey is a curated online art gallery showcasing a diverse range of contemporary artworks. Our mission is to connect art lovers with inspiring pieces and support emerging and established artists worldwide.
-                </p>
             </section>
         </div>
     );
